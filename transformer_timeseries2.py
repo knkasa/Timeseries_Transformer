@@ -5,8 +5,6 @@ import os
 import numpy as np
 import tensorflow as tf
 
-os.chdir('C:\my_working_env\deeplearning_practice')
-
 #------------------------------------------------------------------
 
 def readucr(filename):
@@ -105,9 +103,9 @@ class transformer_model(tf.keras.Model):
         return outputs
 
 
-input_shape = x_train.shape[1]
+input_shape = x_train.shape[1]  # dimension=NxTx1
 model = transformer_model(input_shape)  
-model.build( input_shape=(None,input_shape,1) )    # Define input shape here NxD D=# of columns.  For LSTM, NxTxD (None, T, D).  
+model.build( input_shape=(None,input_shape,1) ) 
 
 #--------- Train the model ----------------------------------------------
 
